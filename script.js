@@ -12,7 +12,7 @@ function hideElement(element) {
 window.onload = function () {
     console.log('External: onload fired');
     document.getElementById("but1").addEventListener("click", function () {
-        hideElement(ele1)
+        hideElement(mapid)
     });
     document.getElementById("but2").addEventListener("click", function () {
         hideElement(ele2)
@@ -25,7 +25,8 @@ window.onload = function () {
     });
 
     data.fetchGeo();
-    data.fetchMap();
+    data.fetchLyrics();
+    
     
 };
 
