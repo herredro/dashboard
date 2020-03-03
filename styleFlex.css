@@ -40,6 +40,9 @@ body{
     height: 300;  
     margin: 10px
 }
+#lyrics{
+    height: auto
+}
 .hide{
 display:none;
 }

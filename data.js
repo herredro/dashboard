@@ -7,7 +7,7 @@ export const fetchGeo = async () => {
 }
 
 export const fetchMap = (xx, yy) => {
-    var mymap = L.map('mapid').setView([xx, yy], 14);
+    var mymap = L.map('map').setView([xx, yy], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
@@ -15,11 +15,13 @@ export const fetchMap = (xx, yy) => {
 }
 
 function fillDiv(data, div) {
-    div.innerHTML = data.toString()
+    div.innerText = data.toString()
 }
 
-function const fetchLyrics = async () => {
-    let response = await fetch('https://api.lyrics.ovh/v1/coldplay/yellow');
+export async function fetchLyrics (artist, title) {
+    
+    let response = await fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`);
     let data = await response.json();
-    fillDiv(data, ele2)
+    console.log('data ', data.lyrics)
+    fillDiv(data.lyrics, lyricsOut)
 }

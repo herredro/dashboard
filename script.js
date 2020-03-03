@@ -8,14 +8,20 @@ function hideElement(element) {
     }
 };
 
+function teste(){
+    let artist = inputartist.value
+    let title = inputtitle.value
+    console.log(artist,title)
+    data.fetchLyrics(artist, title);
+}
 
 window.onload = function () {
     console.log('External: onload fired');
     document.getElementById("but1").addEventListener("click", function () {
-        hideElement(mapid)
+        hideElement(map)
     });
     document.getElementById("but2").addEventListener("click", function () {
-        hideElement(ele2)
+        hideElement(lyrics)
     });
     document.getElementById("but3").addEventListener("click", function () {
         hideElement(ele3)
@@ -23,9 +29,11 @@ window.onload = function () {
     document.getElementById("but4").addEventListener("click", function () {
         hideElement(ele4)
     });
+    
+    lyricsOut.onclick = teste
 
     data.fetchGeo();
-    data.fetchLyrics();
+    
     
     
 };
