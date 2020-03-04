@@ -19,7 +19,6 @@ function fillDiv(data, div) {
 }
 
 export async function fetchLyrics (artist, title) {
-    
     let response = await fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`);
     let data = await response.json();
     console.log('data ', data.lyrics)
